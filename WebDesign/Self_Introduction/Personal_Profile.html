@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+	<title>個人小檔案</title>
+  </head>	
+  <body bgcolor="c1ecf8">
+    <center><img src="profile1.jpg"></center>
+    <form method="post">
+      
+        個人基本資訊<br />
+        姓&nbsp;&nbsp;&nbsp;&nbsp;名：
+        <input type="text" name="username" size="20" required="required"><br>
+        性&nbsp;&nbsp;&nbsp;&nbsp;別：
+        <input type="radio" name="usersex" value="male" checked="true">男
+        <input type="radio" name="usersex" value="female">女<br>
+        身&nbsp;&nbsp;&nbsp;&nbsp;高：
+        <input type="text" name="height" size="20">(cm)<br>
+        體&nbsp;&nbsp;&nbsp;&nbsp;重：
+        <input type="text" name="weight" size="20">(kg)<br>
+        住&nbsp;&nbsp;&nbsp;&nbsp;址：
+        <input type="text" name="address" size="60"><br>
+        手機號碼：
+        <input type="tel" name="phone" size="21" placeholder="請輸入您的手機號碼" pattern="[0-9]{4}-[0-9]{6}" required="required"><br>
+        郵件信箱：
+        <input type="email" name="email" size="21" placeholder="請輸入您的電子郵件信箱"><br>
+        
+        
+        最高學歷：
+        <select name="userschool" size="4" onchange="alert('你選的學歷是「'+this.options[this.selectedIndex].text+'」')">
+          <option value="高中以下">高中以下
+          <option value="大專院校">大專院校
+          <option value="碩士">碩士</option>
+          <option value="博士">博士</option>
+          <option value="其它">其它</option>
+        </select><br>
+        <br><br>    
+      
+        其它資訊<br>
+        
+        您喜歡下列哪些活動（可複選）？
+        <input type="checkbox" name="userinterest" value="閱讀" onchange="alert('你選的興趣是->'+this.value)">閱讀
+        <input type="checkbox" name="userinterest" value="打球" onchange="alert('你選的興趣是->'+this.value)">打球
+        <input type="checkbox" name="userinterest" value="逛街" onchange="alert('你選的興趣是->'+this.value)">逛街
+        <input type="checkbox" name="userinterest" value="聽音樂" onchange="alert('你選的興趣是->'+this.value)">聽音樂
+        <input type="checkbox" name="userinterest" value="水上運動" onchange="alert('你選的興趣是->'+this.value)">水上運動
+        <input type="checkbox" name="userinterest" value="旅行" onchange="alert('你選的興趣是->'+this.value)">旅行
+        <input type="checkbox" name="userinterest" value="電腦" onchange="alert('你選的興趣是->'+this.value)">電腦
+        <input type="checkbox" name="userinterest" value="看電影" onchange="alert('你選的興趣是->'+this.value)">看電影<br>
+         
+        您對於利用臉書經營人際關係有何看法？<br>
+        <textarea name="userthought" cols="50" rows="10"></textarea><br>  
+      <br>
+        
+      <input type="submit" value="傳送資料">   
+      <input type="reset" value="清除資料">
+                           
+    </form>        
+    </body> 
+</html>

@@ -1,0 +1,69 @@
+<html>
+<head>
+  <title>JavaScript-函數練習</title>
+  <script type="text/javascript">
+        function startTime() {
+            var today = new Date()
+            var h = today.getHours()
+            var m = today.getMinutes()
+            var s = today.getSeconds()
+            // add a zero in front of numbers<10
+            m = checkTime(m)
+            s = checkTime(s)
+            document.getElementById('txt').innerHTML = h + ":" + m + ":" + s
+            t = setTimeout('startTime()', 500)
+        }
+ 
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i
+            }
+            return i
+        }
+    </script>
+</head>
+<body onload="startTime()">
+<div align=center id="txt"></div>
+<h2 align=center>簡易碼錶</h2>
+<hr>
+
+<script language="javascript">
+function go(form){
+	switch(form.myButton.value){
+		case "開始計時":
+			date1=new Date();				// 取得目前時間
+            form.starttime.value=date1.getHours()+':'+date1.getMinutes()+':'+date1.getSeconds()+'.'+date1.getMilliseconds();    //於開始時間那格顯示現在的時分秒
+            form.timeDisplay.value="計時中...";		// 設定時間顯示為 計時中...
+			form.myButton.value="結束計時";			// 將按鈕文字改為「結束計時」
+			break;
+		case "結束計時":
+			date2=new Date();				// 取得目前時間
+            form.endtime.value=date2.getHours()+':'+date2.getMinutes()+':'+date2.getSeconds()+'.'+date2.getMilliseconds();      //於結束時間那格顯示現在的時分秒
+            timeDiff=(date2.getTime()-date1.getTime())/1000;// 時間差距，以秒為單位
+			form.timeDisplay.value=timeDiff;		// 設定時間顯示
+			form.myButton.value="歸零";			// 將按鈕文字改為「歸零」
+			break;
+		case "歸零":
+			form.timeDisplay.value="00:00:00";		// 設定時間顯示為 00:00:00
+			form.starttime.value=" ";               // 將開始時間清空
+            form.endtime.value=" ";                 // 將結束時間清空
+            form.myButton.value="開始計時";			// 將按鈕文字改為「開始計時」
+			break;
+		default:
+			alert("Error!");
+			break;
+	}
+}
+</script>
+<center>
+<form>
+<input type="button" name="myButton" value="開始計時" width=10 onClick="go(this.form)">
+<p>
+開始時間：<input type=text name="starttime" value="">
+結束時間：<input type=text name="endtime" value="">
+經過時間：<input type=text name="timeDisplay" value="00:00:00">秒
+</form>
+</center>
+
+</body>
+</html>
